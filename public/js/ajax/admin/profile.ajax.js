@@ -15,7 +15,7 @@ loadProfile = () => {
 			$('#welcome').html(`Welcome ${data.first_name}!`)
 
 			// Load User Profile
-			$('#view_user_no').html(data.user_profile.user_no)
+			$('#view_user_no').html(data.admin_profile.user_no)
 			$('#view_full_name').html(data.full_name)
 			$('#view_name').html(data.full_name)
 			$('#view_contact').html(data.contact_number)

@@ -2,7 +2,7 @@
 const webEnv = 'dev'
 const apiEnv = 'prod'
 
-const baseURL = webEnv === 'prod' ? 'https://www.mypupqc.live/' : 'http://localhost/myPUPQC/'
+const baseURL = webEnv === 'prod' ? 'https://www.mypupqc.live/' : 'http://localhost/mypupqc-admin/'
 const apiURL =
 	apiEnv === 'prod'
 		? 'https://mypupqc-api.azurewebsites.net/mypupqc/v1/'
@@ -29,15 +29,6 @@ function logout(page) {
 	switch (page) {
 		case 'logout':
 			msg = 'You will be redirected to Home page.'
-			break
-		case 'sis':
-			msg = 'You will be redirected to PUP SIS login page.'
-			break
-		case 'vass':
-			msg = 'You will be redirected to PUP VASS login page.'
-			break
-		case 'osssac':
-			msg = 'You will be redirected to PUP OSSSAC page.'
 			break
 		default:
 			return false
@@ -67,7 +58,7 @@ function logout(page) {
 		if (!result.value) return false
 
 		localStorage.clear()
-		window.location.href = baseURL + page
+		if (page === 'logout') window.location.href = baseURL
 	})
 }
 

@@ -36,7 +36,7 @@ const Toast = Swal.mixin({
 var login = () => {
 	// Login AJAX Request
 	$.ajax({
-		url: apiURL + 'login',
+		url: apiURL + 'loginToAdmin',
 		type: 'POST',
 		data: {
 			user_no: $('#user_no').val(),
@@ -44,6 +44,7 @@ var login = () => {
 		},
 		dataType: 'json',
 		success: (response) => {
+			console.log(response)
 			// Get result data
 			const data = response.data
 
@@ -56,7 +57,6 @@ var login = () => {
 			session_data += 'token=' + data.token
 			session_data += '&user_id=' + data.user_id
 			session_data += '&user_type=' + data.user_type
-			session_data += '&user_roles=' + data.user_roles
 
 			Toast.fire({
 				icon: 'success',

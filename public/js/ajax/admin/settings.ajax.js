@@ -134,7 +134,8 @@ changePasswordAJAX = () => {
 					icon: 'success',
 					title: 'Change Password Successfully!',
 				}).then(function () {
-					window.location.reload()
+					localStorage.clear()
+					window.location.href = baseURL
 				})
 			}
 		},
