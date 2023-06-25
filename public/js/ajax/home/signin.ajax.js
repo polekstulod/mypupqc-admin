@@ -35,6 +35,9 @@ const Toast = Swal.mixin({
 
 var login = () => {
 	// Login AJAX Request
+	// Get signin button and disable it
+	const signin_btn = $('#signin')
+	signin_btn.attr('disabled', true)
 	$.ajax({
 		url: apiURL + 'loginToAdmin',
 		type: 'POST',
@@ -77,6 +80,8 @@ var login = () => {
 				cancelButtonText: 'Dismiss',
 				buttonsStyling: !1,
 				showCloseButton: !0,
+			}).then((e) => {
+				signin_btn.attr('disabled', false)
 			})
 		},
 	})
