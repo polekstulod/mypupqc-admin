@@ -134,8 +134,16 @@ changePasswordAJAX = () => {
 					icon: 'success',
 					title: 'Change Password Successfully!',
 				}).then(function () {
-					localStorage.clear()
-					window.location.href = baseURL
+					handlePasswordInputChange()
+					
+					toggleValidationClass("pass-lower", true)
+					toggleValidationClass("pass-upper", true)
+					toggleValidationClass("pass-number", true)
+					toggleValidationClass("pass-special", true)
+					toggleValidationClass("pass-length-min", true)
+					toggleValidationClass("pass-length-max", true)
+
+					changePassLogout()
 				})
 			}
 		},
