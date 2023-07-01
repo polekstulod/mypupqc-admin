@@ -35,14 +35,17 @@ loadActiveDocuments = () => {
 			type: 'GET',
 			headers: AJAX_HEADERS,
 		},
+		//No Sort Function
+		"aoColumnDefs": [
+			{ 'bSortable': false, 'aTargets': ['no-sort'] }
+		],
 		columns: [
 			{
 				data: null,
 				width: '70%',
 				render: (data) => {
-					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${
-						data.document_details == null ? '' : data.document_details
-					}</small>`
+					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${data.document_details == null ? '' : data.document_details
+						}</small>`
 				},
 			},
 			{
@@ -121,9 +124,8 @@ loadDeletedDocuments = () => {
 				data: null,
 				width: '65%',
 				render: (data) => {
-					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${
-						data.document_details == null ? '' : data.document_details
-					}</small>`
+					return `<a href="#!" class="fw-medium">${data.document_name}</a><br><small>${data.document_details == null ? '' : data.document_details
+						}</small>`
 				},
 			},
 			{

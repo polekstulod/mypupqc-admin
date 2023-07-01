@@ -167,7 +167,7 @@
                                     <th>Payment Status</th>
                                     <th>Details</th>
                                     <th>Date Released</th>
-                                    <th>Action</th>
+                                    <th class="no-sort">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -184,7 +184,7 @@
                                     <th>Details</th>
                                     <th>Request Status</th>
                                     <th>Date Cancelled</th>
-                                    <th>Action</th>
+                                    <th class="no-sort">Action</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -60,6 +60,10 @@ loadReleasedRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			//No Sort Function
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			columns: [
 				// Control Number
 				{
@@ -224,6 +228,10 @@ loadCancelledRequests = () => {
 				type: 'GET',
 				headers: AJAX_HEADERS,
 			},
+			//No Sort Function
+			"aoColumnDefs": [
+				{ 'bSortable': false, 'aTargets': ['no-sort'] }
+			],
 			columns: [
 				// Control Number
 				{
