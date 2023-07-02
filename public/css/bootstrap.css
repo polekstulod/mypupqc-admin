@@ -2447,7 +2447,7 @@ progress {
   font-weight: 400;
   line-height: 1.5;
   color: var(--vz-body-color);
-  background-color: var(--vz-input-bg);
+  background-color: transparent;
   background-clip: padding-box;
   border: 1px solid var(--vz-input-border);
   -webkit-appearance: none;
@@ -3826,7 +3826,7 @@ textarea.form-control-lg {
 
 .btn-link {
   font-weight: 400;
-  color: var(--vz-link-color);
+  color: var(--vz-gray);
   text-decoration: underline;
 }
 .btn-link:hover {

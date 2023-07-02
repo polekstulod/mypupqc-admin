@@ -1,14 +1,8 @@
 <body>
     <div class="auth-page-wrapper pt-5">
         <!-- auth page bg -->
-        <div class="auth-one-bg-position  auth-one-bg" id="auth-particles">
+        <div class="auth-one-bg-position  auth-one-bg">
             <div class="bg-overlay"></div>
-
-            <div class="shape">
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1440 120">
-                    <path d="M 0,36 C 144,53.6 432,123.2 720,124 C 1008,124.8 1296,56.8 1440,40L1440 140L0 140z"></path>
-                </svg>
-            </div>
         </div>
 
         <!-- auth page content -->
@@ -16,13 +10,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="text-center mt-sm-5 mb-4 text-white-50">
+                        <div class="text-center mt-sm-4 text-white-50">
                             <div>
                                 <a href="<?= base_url() ?>" class="d-inline-block auth-logo">
+                                    <img src="<?= base_url() ?>public/images/PUPLogo (1).webp" height="100    ">
+                                    <br>
                                     <img src="<?= base_url() ?>public/images/logo-light.png" alt="" height="60">
                                 </a>
                             </div>
-                            <p class="mt-3 fs-15 fw-medium">Admin Portal</p>
                         </div>
                     </div>
                 </div>
@@ -30,13 +25,11 @@
 
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
-                        <div class="card mt-4">
-                            <div class="card-body p-4">
-                                <div class="text-center mt-2">
-                                    <h5 class="text-primary">Welcome Back!</h5>
+                            <div class="text-white card-body p-4">
+                                <div class="text-center p-2">
                                     <p class="">Sign in to continue to myPUPQC's Admin Portal</p>
                                 </div>
-                                <div class="p-2 mt-4">
+                                <div class="p-2">
                                     <form id="signin_form" class="needs-validation" novalidate action="<?= base_url() ?>student/dashboard">
 
                                         <div class="mb-3">
@@ -73,7 +66,7 @@
                                 </div>
                             </div>
                             <!-- end card body -->
-                        </div>
+                        
                         <!-- end card -->
                     </div>
                 </div>
@@ -88,7 +81,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="text-center">
+                        <div class="text-white text-center">
                             <p class="mb-0">&copy; <span id="year"></span> POLYTECHNIC UNIVERSITY OF THE PHILIPPINES - QUEZON CITY BRANCH</p>
                             <script>
                                 document.getElementById("year").innerHTML = new Date().getFullYear();

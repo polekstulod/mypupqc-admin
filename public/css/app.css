@@ -12369,22 +12369,22 @@ span.flatpickr-weekday {
   left: 0;
   right: 0;
   width: 100%;
-  height: 380px;
+  height: 100%;
 }
 @media (max-width: 575.98px) {
   .auth-one-bg-position {
-    height: 280px;
+    height: 100%;
   }
 }
 
 .auth-one-bg {
-  background-image: url("../images/auth-one-bg.jpg");
+  background-image: url("../images/facilities/img-3.webp");
   background-position: center;
   background-size: cover;
 }
 .auth-one-bg .bg-overlay {
   background: -webkit-gradient(linear, left top, right top, from(#520101), to(#700101));
-  background: linear-gradient(to right, #520101, #700101);
+  background: #3f0d0d;
   opacity: 0.9;
 }
 .auth-one-bg .shape {
