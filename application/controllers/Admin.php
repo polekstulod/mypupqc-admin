@@ -280,4 +280,80 @@ class Admin extends CI_Controller
         $this->load->view('partials/foot-scripts');
         $this->load->view('admin/organization/scripts/org-scripts');
     }
+
+    public function researchcop_dashboard()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/admin/topbar');
+        $this->load->view('partials/admin/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Dashboard"]);
+        $this->load->view('admin/researchcop/dashboard');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('admin/scripts/dashboard-scripts');
+    }
+
+    public function activity_logs()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/admin/topbar');
+        $this->load->view('partials/admin/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Activity Logs"]);
+        $this->load->view('admin/researchcop/activity-logs');
+        $this->load->view('partials/footer');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('admin/scripts/dashboard-scripts');
+    }
+
+    public function research_archives()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/admin/topbar');
+        $this->load->view('partials/admin/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Research Archives"]);
+        $this->load->view('admin/researchcop/research-archives');
+        $this->load->view('partials/footer');
+        $this->load->view('admin/researchcop/components/ra-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('admin/scripts/dashboard-scripts');
+        $this->load->view('admin/researchcop/scripts/ra-scripts');
+    }
+
+    public function research_records()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/admin/topbar');
+        $this->load->view('partials/admin/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Research Records"]);
+        $this->load->view('admin/researchcop/research-records');
+        $this->load->view('partials/footer');
+        $this->load->view('admin/researchcop/components/rr-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('admin/scripts/dashboard-scripts');
+        $this->load->view('admin/researchcop/scripts/rr-scripts');
+    }
+
+    public function research_submissions()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/admin/topbar');
+        $this->load->view('partials/admin/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Research Submissions"]);
+        $this->load->view('admin/researchcop/research-submissions');
+        $this->load->view('partials/footer');
+        $this->load->view('admin/researchcop/components/rp-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('admin/scripts/dashboard-scripts');
+        $this->load->view('admin/researchcop/scripts/rp-scripts');
+    }
 }

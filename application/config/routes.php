@@ -146,3 +146,15 @@ $route['admin/evrsers/reservation-history'] = 'admin/reservation_history';
 
 $route['admin/holiday'] = 'admin/holiday';
 $route['admin/organization'] = 'admin/organization';
+
+/*
+| ----------------------
+|    RESEARCHCOP ROUTES FOR ADMIN
+| ----------------------
+*/
+
+$route['admin/researchcop/dashboard'] = 'admin/researchcop_dashboard';
+$route['admin/researchcop/activity-logs'] = 'admin/activity_logs';
+$route['admin/researchcop/research-archives'] = 'admin/research_archives';
+$route['admin/researchcop/research-records'] = 'admin/research_records';
+$route['admin/researchcop/research-submissions'] = 'admin/research_submissions';

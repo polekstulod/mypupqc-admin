@@ -170,6 +170,45 @@
               </a>
             </li>
 
+            <li class="menu-title">
+              <i class="ri-more-fill"></i>
+              <span>ResearchCop</span>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link menu-link" href="<?= base_url() ?>admin/researchcop/dashboard">         
+                <i class="ri-home-line"></i>
+                 <span>Dashboard</span>
+              </a>
+             </li>                   
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>admin/researchcop/activity-logs">
+                            <i class="ri-list-check"></i>
+                            <span>Activity Logs</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>admin/researchcop/research-archives">
+                            <i class="ri-archive-line"></i>
+                            <span>Research Archives</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>admin/researchcop/research-records">
+                            <i class="ri-article-line"></i>
+                            <span>Research Records</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>admin/researchcop/research-submissions">
+                            <i class="ri-time-line"></i>
+                            <span>Research Submissions</span>
+                        </a>
+                    </li>
           </ul>
         </div>
         <!-- Sidebar -->
