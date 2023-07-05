@@ -111,7 +111,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content border-0 overflow-hidden">
             <div class="modal-header p-3">
-                <h4 class="card-title mb-0">Delete Research</h4>
+                <h4 class="card-title mb-0">Archive Research</h4>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -132,7 +132,7 @@
                         <input type="text" class="form-control" id="r_remarks" name="r_remarks" placeholder="State the Remarks." required />
                     </div>
                     <div class="text-end">
-                        <button type="submit" class="btn btn-primary">Delete</button>
+                        <button type="submit" class="btn btn-primary">Move to Archives</button>
                     </div>
                 </form>
             </div>
