@@ -114,6 +114,29 @@ loadResearchRecordsTable = () => {
     `
 					},
 				},
+
+				// Research Document
+				{
+					data: null,
+					class: 'text-center',
+					render: (data) => {
+						let ResearchDocu = data.research_pdf
+						if (data.research_pdf == null) {
+							ResearchDocu = `<span class="badge rounded-pill bg-danger">Not Available</span>`
+						}
+						else{
+							ResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#?"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>`
+						}
+
+						return `
+						<div class="dropdown d-inline-block">
+						${ResearchDocu}
+						</div>
+						`
+					},
+				},
+
+			
 			],
 			order: [[0, 'asc']],
 		})

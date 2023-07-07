@@ -11,6 +11,8 @@
                             <th class="t-align">Research Title</th>
                             <th class="t-align">Information</th>
                             <th class="t-align">Remarks</th>
+                            <th class="t-align">Document</th>
+                            <th class="t-align">Actions</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -116,7 +116,7 @@
     <!-- /.modal-dialog -->
 </div>
 
-<!--View Research Record Modal-->
+<!--View Research Remarks Modal-->
 <div class="modal fade" id="viewResearchRemarks" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
@@ -171,6 +171,42 @@
                 <button type="button" class="btn btn-light" data-bs-dismiss="modal">
                     Close
                 </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<!-- Return Research modal -->
+<div id="returnResearchModal" class="modal fade" tabindex="-1" aria-hidden="true" style="display: none">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 overflow-hidden">
+            <div class="modal-header p-3">
+                <h4 class="card-title mb-0">Return Research</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="returnResearchForm" class="needs-validation" novalidate>
+                    <div class="mb-3">
+                        <input type="hidden" id="edit_research_id" name="edit_research_id">
+                        <input type="hidden" id="r_checked_by" name="r_checked_by">
+                        <h4 class="fs-15">Research Title:</h4>
+                        <div class="text-muted" id="r_title2" name="r_title2"></div>
+                    </div>
+                    <div class="mb-3">
+                        <h4 class="fs-15">Checked by:</h4>
+                        <div class="text-muted" id="r_checked_by2" name="r_checked_by2"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="r_remarks" class="form-label">Remarks<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="r_remarks" name="r_remarks" placeholder="State the Remarks." required />
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary">Return</button>
+                    </div>
+                </form>
             </div>
         </div>
         <!-- /.modal-content -->

@@ -14,6 +14,7 @@
                             <th class="t-align">Type</th>
                             <th class="t-align">Date Accomplished</th>
                             <th class="t-align">Actions</th>
+                            <th class="t-align">Document</th>
                         </tr>
                     </thead>
                     <tbody>
