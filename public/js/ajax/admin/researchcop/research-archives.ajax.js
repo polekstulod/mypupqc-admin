@@ -161,6 +161,7 @@ viewResearchRemarks = (research_id) => {
 			$('#view_research_checked_by').html(researchRecord.research_checked_by)
 			$('#view_research_remarks').html(researchRecord.research_remarks)
 			$('#r_checked_by').val(researchRecord.research_checked_by)
+			$('#edit_research_id').val(researchRecord.research_id)
 			$('#r_checked_by2').html(researchRecord.research_checked_by)
 			$('#r_title2').html(researchRecord.research_title)
 			

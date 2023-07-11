@@ -217,7 +217,7 @@ deleteResearchRecordAJAX = (research_id) => {
 				if (result) {
 					Toast.fire({
 						icon: 'success',
-						title: 'Delete Research Successfully!',
+						title: 'Research move to Archives Successfully!',
 					}).then(function () {
 						$('#deleteResearchModal').modal('hide')
 						$('form#deleteResearchForm')[0].reset()
@@ -229,7 +229,7 @@ deleteResearchRecordAJAX = (research_id) => {
 			},
 		}).fail(() => {
 			Swal.fire({
-				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while deleting a research. Please try again.</p></div></div>',
+				html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong !</h4><p class="text-muted mx-4 mb-0">There was an error while archiving a research. Please try again.</p></div></div>',
 				showCancelButton: !0,
 				showConfirmButton: !1,
 				cancelButtonClass: 'btn btn-danger w-xs mb-1',
