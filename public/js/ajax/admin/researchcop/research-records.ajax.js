@@ -125,7 +125,7 @@ loadResearchRecordsTable = () => {
 							ResearchDocu = `<span class="badge rounded-pill bg-danger">Not Available</span>`
 						}
 						else{
-							ResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#?"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>`
+							ResearchDocu = `<button type="button" class="btn btn-success btn-label waves-effect waves-light" onclick="viewResearchDocument('${data.research_id}')" data-bs-toggle="modal" data-bs-target="#research_document_preview"><i class="ri-file-line label-icon align-middle fs-16 me-2"></i>View</button>`
 						}
 
 						return `
@@ -239,4 +239,20 @@ deleteResearchRecordAJAX = (research_id) => {
 			})
 		})
 	}
+}
+
+
+viewResearchDocument = (research_id) => {
+	$.ajax({
+		url: apiURL + `researchcop/research-records/${research_id}`,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			const data = result.data
+			console.log(data)
+			$('#hid_research_id').val(data.research_id)
+			$('#hid_research_title').html(data.research_title)
+			$('#document_preview').attr('src', data.research_pdf)
+		},
+	})
 }
