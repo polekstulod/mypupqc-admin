@@ -2446,7 +2446,7 @@ progress {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--vz-body-color);
+  color: var(--vz-gray-500);
   background-color: transparent;
   background-clip: padding-box;
   border: 1px solid var(--vz-input-border);
@@ -2472,8 +2472,8 @@ progress {
   cursor: pointer;
 }
 .form-control:focus {
-  color: var(--vz-body-color);
-  background-color: var(--vz-input-bg);
+  color: var(--vz-gray-500);
+  background-color: transparent;
   border-color: var(--vz-input-focus-border);
   outline: 0;
   -webkit-box-shadow: 0 0 0 0 rgba(112, 1, 1, 0.25);
