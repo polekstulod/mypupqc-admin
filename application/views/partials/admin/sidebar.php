@@ -190,6 +190,13 @@
                     </li>
 
                     <li class="nav-item">
+                        <a class="nav-link menu-link" href="<?= base_url() ?>admin/researchcop/copyright">
+                            <i class="ri-copyright-line"></i>
+                            <span>Copyright Management</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link menu-link" href="<?= base_url() ?>admin/researchcop/research-archives">
                             <i class="ri-archive-line"></i>
                             <span>Research Archives</span>

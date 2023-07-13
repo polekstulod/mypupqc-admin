@@ -154,6 +154,7 @@ $route['admin/organization'] = 'admin/organization';
 */
 
 $route['admin/researchcop/dashboard'] = 'admin/researchcop_dashboard';
+$route['admin/researchcop/copyright'] = 'admin/research_copyright';
 $route['admin/researchcop/activity-logs'] = 'admin/activity_logs';
 $route['admin/researchcop/research-archives'] = 'admin/research_archives';
 $route['admin/researchcop/research-records'] = 'admin/research_records';

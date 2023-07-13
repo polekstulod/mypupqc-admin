@@ -295,6 +295,22 @@ class Admin extends CI_Controller
         $this->load->view('admin/scripts/dashboard-scripts');
     }
 
+    public function research_copyright()
+    {
+        $this->load->view('partials/main');
+        $this->load->view('partials/title-meta');
+        $this->load->view('partials/head-css');
+        $this->load->view('partials/admin/topbar');
+        $this->load->view('partials/admin/sidebar');
+        $this->load->view('partials/page-title', ["page_title" => "ResearchCop", "title" => "Copyright Management"]);
+        $this->load->view('admin/researchcop/copyright');
+        $this->load->view('partials/footer');
+        $this->load->view('admin/researchcop/components/copyright-modal');
+        $this->load->view('partials/foot-scripts');
+        $this->load->view('admin/scripts/dashboard-scripts');
+        $this->load->view('admin/researchcop/scripts/copyright-scripts');
+    }
+
     public function activity_logs()
     {
         $this->load->view('partials/main');
