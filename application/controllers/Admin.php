@@ -293,6 +293,7 @@ class Admin extends CI_Controller
         $this->load->view('partials/footer');
         $this->load->view('partials/foot-scripts');
         $this->load->view('admin/scripts/dashboard-scripts');
+        $this->load->view('admin/researchcop/scripts/dashboard-scripts');
     }
 
     public function research_copyright()

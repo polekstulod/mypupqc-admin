@@ -155,6 +155,7 @@ viewResearchPending = (research_id) => {
 			const researchRecord = result.data
 
 				$('#view_research_title').html(researchRecord.research_title)
+				$('#view_research_co_author').html(researchRecord.research_co_author)
                 $('#view_research_adviser').html(researchRecord.research_adviser)
 				$('#view_research_status').html(researchRecord.research_status)
                 $('#view_research_abstract').html(researchRecord.research_abstract)
