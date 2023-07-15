@@ -5,7 +5,12 @@ $(function () {
 	$('#addHolidayForm').on('submit', function (e) {
 		e.preventDefault() // prevent page refresh
 		// pass data to API for updating of student's info
-		addHolidayAJAX()
+		
+		if ($('#holiday_id').val() == "")
+			addHolidayAJAX()
+		else
+			updateHoliday();
+
 	})
 })
 
@@ -129,7 +134,7 @@ viewAllHolidays = () => {
 						return `
                             <div class="dropdown d-inline-block">
                                 <button class="btn ${buttonColor} btn-icon waves-effect waves-light" onclick="changeHolidayStatus('${data.holiday_id}', '${data.holiday_status}')"><i class="${buttonLogo} fs-5"></i></button>
-                                <button class="btn btn-warning btn-icon waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#editHolidayModal" data-id="${data.holiday_id}"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-warning btn-icon waves-effect waves-light"  onclick="editHoliday('${data.holiday_id}')" data-id="${data.holiday_id}"><i class="ri-edit-2-fill"></i></button>
                                 <button type="button" class="btn btn-dark bg-gradient btn-icon waves-effect waves-light" onclick="deleteHoliday('${data.holiday_id}')"><i class="bx bxs-trash fs-5"></i></button> 
                             </div>
                         `
@@ -253,6 +258,95 @@ changeHolidayStatus = (holiday_id, holiday_status) => {
 		}
 	})
 }
+editHoliday = (holiday_id) => {
+	$.ajax({
+		url: apiURL + 'super_admin/holiday/' + holiday_id,
+		type: 'GET',
+		headers: AJAX_HEADERS,
+		success: (result) => {
+			if (result) {
+				if (!$( "#collapseExample" ).is( ":visible" )){
+					$('#newHolidayButton').trigger('click');
+					$('#newHolidayButton').hide();
+				}
+
+				$('#holiday_label').html('Edit Holiday');
+				$('#holiday_id').val(result.data.holiday_id);
+				$('#holiday_name').val(result.data.holiday_name);
+				$('#holiday_date').val(result.data.holiday_date);
+				$('#holiday_type').val(result.data.holiday_type);
+				$('#holiday_recurrence').val(result.data.holiday_recurrence);
+				$('#holiday_recurrence').trigger('change');
+				$('#holiday_description').val(result.data.holiday_description);
+			}
+		},
+	}).fail((xhr) => {
+		Swal.fire({
+			html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${xhr.responseJSON.message}</p></div></div>`,
+			showCancelButton: !0,
+			showConfirmButton: !1,
+			cancelButtonClass: 'btn btn-danger w-xs mb-1',
+			cancelButtonText: 'Dismiss',
+			buttonsStyling: !1,
+			showCloseButton: !0,
+		})
+	})
+}
+
+
+updateHoliday = () => {
+	if ($('#addHolidayForm')[0].checkValidity()) {
+		// * No error in validation
+		const form = new FormData($('#addHolidayForm')[0])
+			for (var pair of form.entries()) {
+			console.log(pair[0] + ': ' + pair[1])
+		}
+
+		const data = {
+			holiday_name: form.get('holiday_name'),
+			holiday_date: form.get('holiday_date'),
+			holiday_type: form.get('holiday_type'),
+			holiday_recurrence: form.get('holiday_recurrence'),
+			holiday_description: form.get('holiday_description'),
+		}
+
+		$.ajax({
+			url: apiURL + 'super_admin/holiday/edit/' + $('#holiday_id').val(),
+			type: 'PUT',
+			headers: AJAX_HEADERS,
+			data: data,
+			dataType: 'json',
+			success: (result) => {
+				if (result) {
+					Swal.fire({
+						html: '<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/lupuorrc.json" trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Well done !</h4><p class="text-muted mx-4 mb-0">You have successfully updated an announcement!</p></div></div>',
+						showCancelButton: !0,
+						showConfirmButton: !1,
+						cancelButtonClass: 'btn btn-success w-xs mb-1',
+						cancelButtonText: 'Ok',
+						buttonsStyling: !1,
+						showCloseButton: !0,
+					}).then(function () {
+						// reload Pending Reservations table
+						refreshPage()
+					})
+				}
+			},
+		}).fail((xhr) => {
+			Swal.fire({
+				html: `<div class="mt-3"><lord-icon src="https://cdn.lordicon.com/tdrtiskw.json" trigger="loop" colors="primary:#f06548,secondary:#f7b84b" style="width:120px;height:120px"></lord-icon><div class="mt-4 pt-2 fs-15"><h4>Something went Wrong!</h4><p class="text-muted mx-4 mb-0">${
+					JSON.parse(xhr.responseText).message
+				}</p></div></div>`,
+				showCancelButton: !0,
+				showConfirmButton: !1,
+				cancelButtonClass: 'btn btn-danger w-xs mb-1',
+				cancelButtonText: 'Dismiss',
+				buttonsStyling: !1,
+				showCloseButton: !0,
+			})
+		})
+	}
+}
 
 deleteHoliday = (holiday_id) => {
 	Swal.fire({
@@ -309,3 +403,14 @@ deleteHoliday = (holiday_id) => {
 		}
 	})
 }
+gotoAdd = () => {
+	$('#newHolidayButton').show();
+	$('#holiday_label').html('Add New Holiday for Calendar Control');
+	$('#holiday_id').val('');
+	$('#holiday_name').val('');
+	$('#holiday_date').val('');
+	$('#holiday_type').val('');
+	$('#holiday_recurrence').val('');
+	$('#holiday_description').val('');	
+}
+		
