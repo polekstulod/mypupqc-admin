@@ -28,6 +28,17 @@
                         <li class="list-group-item">
                             <div class="d-flex align-items-center">
                                 <div class="col-4">
+                                    <h5 class="fs-13 mb-1">Research Co-Author</h5>
+                                </div>
+                                <div class="d-flex fs-13 fw-medium">
+                                    <div class="d-flex fs-13 fw-medium" id="view_research_co_author"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- end list item -->
+                        <li class="list-group-item">
+                            <div class="d-flex align-items-center">
+                                <div class="col-4">
                                     <h5 class="fs-13 mb-1">Adviser</h5>
                                 </div>
                                 <div class="d-flex fs-13 fw-medium">

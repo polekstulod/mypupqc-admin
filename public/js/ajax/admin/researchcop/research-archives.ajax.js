@@ -137,6 +137,7 @@ viewResearchRecord = (research_id) => {
 			const researchRecord = result.data
 				$('#view_research_title').html(researchRecord.research_title)
 				$('#view_research_author').html(researchRecord.research_author)
+				$('#view_research_co_author').html(researchRecord.research_co_author)
 				$('#view_research_date_accomplished').html(researchRecord.research_date_accomplished)
                 $('#view_research_adviser').html(researchRecord.research_adviser)
 				$('#view_research_program').html(researchRecord.research_program)
