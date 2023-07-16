@@ -265,6 +265,8 @@ editHoliday = (holiday_id) => {
 		headers: AJAX_HEADERS,
 		success: (result) => {
 			if (result) {
+				var bool = '' + result.data.holiday_recurrence; 
+				console.log(result);
 				if (!$( "#collapseExample" ).is( ":visible" )){
 					$('#newHolidayButton').trigger('click');
 					$('#newHolidayButton').hide();
@@ -275,9 +277,8 @@ editHoliday = (holiday_id) => {
 				$('#holiday_name').val(result.data.holiday_name);
 				$('#holiday_date').val(result.data.holiday_date);
 				$('#holiday_type').val(result.data.holiday_type);
-				$('#holiday_recurrence').val(result.data.holiday_recurrence);
-				$('#holiday_recurrence').trigger('change');
 				$('#holiday_description').val(result.data.holiday_description);
+				$('#holiday_recurrence').val(bool).trigger('change');
 			}
 		},
 	}).fail((xhr) => {
