@@ -34,7 +34,7 @@
 
                                         <div class="mb-3">
                                             <label for="user_no" class="form-label">Admin Account <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="user_no" name="user_no" placeholder="Enter Admin Account" required>
+                                            <input type="text" class="form-control sign-in-form" id="user_no" name="user_no" placeholder="Enter Admin Account" required>
                                             <div class="invalid-feedback">
                                                 Please enter Admin Account
                                             </div>
@@ -42,7 +42,7 @@
                                         <div class="mb-3">
                                             <label class="form-label" for="password">Password <span class="text-danger">*</span></label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter Password" id="password" name="password" required>
+                                                <input type="password" class="form-control sign-in-form pe-5 password-input" onpaste="return false" placeholder="Enter Password" id="password" name="password" required>
                                                 <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none  password-addon" type="button" id="password-addon"><i class="ri-eye-off-fill align-middle" id="toggle-password"></i></button>
                                                 <div class="invalid-feedback">
                                                     Please enter Password

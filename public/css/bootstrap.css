@@ -2446,7 +2446,7 @@ progress {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.5;
-  color: var(--vz-gray-500);
+  color: var(--vz-gray-900);
   background-color: transparent;
   background-clip: padding-box;
   border: 1px solid var(--vz-input-border);
@@ -2677,6 +2677,10 @@ textarea.form-control-lg {
 .form-control-color::-webkit-color-swatch {
   height: 1.5em;
   border-radius: 0.25rem;
+}
+
+.form-control .sign-in-form{
+  color: var(--vz-gray-500)
 }
 
 .form-select {
