@@ -1,5 +1,7 @@
 <div class="row">
-<div class="flex-grow-1">
+<div class="col-lg-12">
+        <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+            <div class="flex-grow-1">
                 <button type="button" id="newHolidayButton" class="btn btn-success" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="true" aria-controls="collapseExample"><i class="ri-add-line align-bottom me-1"></i> Add Holiday</button>
             </div>
         </div>
@@ -65,6 +67,7 @@
                 </div>
             </div>
         </div>
+</div>
     <div class="card">
         <div class="card-header d-flex align-items-center">
             <h5 class="card-title mb-0 flex-grow-1">Holiday Management</h5>
