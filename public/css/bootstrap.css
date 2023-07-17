@@ -2472,7 +2472,7 @@ progress {
   cursor: pointer;
 }
 .form-control:focus {
-  color: var(--vz-gray-500);
+  color: var(--vz-body-color);
   background-color: transparent;
   border-color: var(--vz-input-focus-border);
   outline: 0;
