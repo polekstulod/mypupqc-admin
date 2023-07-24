@@ -238,6 +238,139 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="card-header alert alert-primary border-0 rounded-top rounded-0 d-flex align-items-center" role="alert">
+                        <i class="ri-line-chart-line text-primary me-2 fs-20"></i>
+                        <span class="fw-bold fs-20 m-1">RESEARCH ANALYTICS in ResearchCop</span>
+                    </div>
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="card card-animate">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="fw-medium text-muted mb-0">Uploaded Researhes</p>
+                                        <div id="ResearchchartOne">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-primary text-info rounded-circle fs-4">
+                                                <i class="ri-upload-2-line text-light"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div> <!-- end card-->
+                    </div>
+
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="card card-animate">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="fw-medium text-muted mb-0">Approved Researches</p>
+                                        <div id="ResearchchartTwo">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-primary text-info rounded-circle fs-4">
+                                                <i class="ri-check-line text-light"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div> <!-- end card-->
+                    </div>
+
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="card card-animate">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="fw-medium text-muted mb-0">Rejected Researches</p>
+                                        <div id="ResearchchartThree">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-primary text-info rounded-circle fs-4">
+                                                <i class="ri-close-fill text-light"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div> <!-- end card-->
+                    </div>
+
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="card card-animate">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="fw-medium text-muted mb-0">Pending Researhes</p>
+                                        <div id="ResearchchartFour">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-primary text-info rounded-circle fs-4">
+                                                <i class="ri-time-line text-light"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div> <!-- end card-->
+                    </div>
+
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="card card-animate">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="fw-medium text-muted mb-0">Copyright Document for Review</p>
+                                        <div id="ResearchchartFive">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-primary text-info rounded-circle fs-4">
+                                                <i class="ri-copyright-line text-light"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div> <!-- end card-->
+                    </div>
+
+                    <div class="col-xxl-3 col-sm-6">
+                        <div class="card card-animate">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="fw-medium text-muted mb-0">Copyright Document Approved</p>
+                                        <div id="ResearchchartSix">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="avatar-sm flex-shrink-0">
+                                            <span class="avatar-title bg-primary text-info rounded-circle fs-4">
+                                                <i class="ri-check-line text-light"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- end card body -->
+                        </div> <!-- end card-->
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

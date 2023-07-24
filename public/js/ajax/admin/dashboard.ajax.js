@@ -64,6 +64,14 @@ charts = () => {
 	chartRequest()
 	chartReservation()
 	finalChart()
+
+	// For ResearchCop
+	ResearchchartOne()
+	ResearchchartTwo()
+	ResearchchartThree()
+	ResearchchartFour()
+	ResearchchartFive()
+	ResearchchartSix()
 }
 
 chartOne = () => {
@@ -796,5 +804,119 @@ finalChart = () => {
 
 		// Set options to chart
 		finalChart.setOption(option)
+	})
+}
+
+ResearchchartOne = () => {
+	var chartNumberOne = document.getElementById('ResearchchartOne')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/researchcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.research_count.researchUpload
+
+		const researchCount = parseInt(data)
+		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
+
+		chartNumberOne.innerHTML = htmlContent
+	})
+}
+
+ResearchchartTwo = () => {
+	var chartNumberTwo = document.getElementById('ResearchchartTwo')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/researchcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.research_count.researchApproved
+
+		const researchCount = parseInt(data)
+		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
+
+		chartNumberTwo.innerHTML = htmlContent
+	})
+}
+
+ResearchchartThree = () => {
+	var chartNumberThree = document.getElementById('ResearchchartThree')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/researchcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.research_count.researchRejected
+
+		const researchCount = parseInt(data)
+		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
+
+		chartNumberThree.innerHTML = htmlContent
+	})
+}
+
+ResearchchartFour = () => {
+	var chartNumberFour = document.getElementById('ResearchchartFour')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/researchcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.research_count.researchPending
+
+		const researchCount = parseInt(data)
+		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
+
+		chartNumberFour.innerHTML = htmlContent
+	})
+}
+
+ResearchchartFive = () => {
+	var chartNumberFive = document.getElementById('ResearchchartFive')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/copyrightcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.copyright_count.copyrightReview
+
+		const researchCount = parseInt(data)
+		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
+
+		chartNumberFive.innerHTML = htmlContent
+	})
+}
+
+ResearchchartSix = () => {
+	var chartNumberSix = document.getElementById('ResearchchartSix')
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/copyrightcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.copyright_count.copyrightApproved
+
+		const researchCount = parseInt(data)
+		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
+
+		chartNumberSix.innerHTML = htmlContent
 	})
 }
