@@ -20,6 +20,8 @@ $(function () {
 		if ($('#updateEducationProfileForm')[0].checkValidity()) {
 			const form = new FormData($('#updateEducationProfileForm')[0])
 
+			console.log(form, $('#hidden_user_id').val())
+
 			updateEducationProfile(form, $('#hidden_user_id').val())
 		}
 	})
@@ -184,7 +186,6 @@ enrollStudent = () => {
 		const form = new FormData($('#enrollStudentForm')[0])
 
 		data = {
-			image: form.get('profile-img-file-input'),
 			user_no: form.get('user_no'),
 			first_name: form.get('first_name'),
 			middle_name: form.get('middle_name'),
@@ -194,10 +195,10 @@ enrollStudent = () => {
 			birth_date: form.get('birth_date'),
 			gender: form.get('gender'),
 			house_street: form.get('house_street'),
-			barangay: form.get('barangay'),
-			municipality: form.get('municipality'),
-			province: form.get('province'),
-			region: form.get('region'),
+			barangay: $('#barangay option:selected').text(),
+			municipality: $('#municipality option:selected').text(),
+			province: $('#province option:selected').text(),
+			region: $('#region option:selected').text(),
 			email_address: form.get('email_address'),
 			civil_status: form.get('civil_status'),
 			citizenship: form.get('citizenship'),
@@ -262,10 +263,10 @@ getStudent = (user_id) => {
 				$('#edit_birth_date').val(birthDateFormatted)
 				$('#edit_gender').val(data.user_profiles[0].gender)
 				$('#edit_house_street').val(data.user_profiles[0].house_street)
-				$('#edit_barangay').val(data.user_profiles[0].barangay)
-				$('#edit_municipality').val(data.user_profiles[0].municipality)
-				$('#edit_province').val(data.user_profiles[0].province)
-				$('#edit_region').val(data.user_profiles[0].region)
+				$('#region_detail').html(`<b>Region</b>: ${data.user_profiles[0].region}`)
+				$('#province_detail').html(`<b>Province</b>: ${data.user_profiles[0].province}`)
+				$('#municipality_detail').html(`<b>Municipality</b>: ${data.user_profiles[0].municipality}`)
+				$('#barangay_detail').html(`<b>Barangay</b>: ${data.user_profiles[0].barangay}`)
 			}
 		},
 	}).fail(() => console.error('There was an error in retrieving student data'))
@@ -282,7 +283,6 @@ updateStudentAJAX = (user_id) => {
 		const form = new FormData($('#updateStudentForm')[0])
 
 		data = {
-			image: null,
 			first_name: form.get('edit_first_name'),
 			middle_name: form.get('edit_middle_name'),
 			last_name: form.get('edit_last_name'),
@@ -291,10 +291,18 @@ updateStudentAJAX = (user_id) => {
 			birth_date: form.get('edit_birth_date'),
 			gender: form.get('edit_gender'),
 			house_street: form.get('edit_house_street'),
-			barangay: form.get('edit_barangay'),
-			municipality: form.get('edit_municipality'),
-			province: form.get('edit_province'),
-			region: form.get('edit_region'),
+		}
+
+		if (
+			$('#edit_region option:selected').text() !== 'Select Region' &&
+			$('#edit_province option:selected').text() !== 'Select Province' &&
+			$('#edit_municipality option:selected').text() !== 'Select City/Municipality' &&
+			$('#edit_barangay option:selected').text() !== 'Select Barangay'
+		) {
+			data['region'] = $('#edit_region option:selected').text()
+			data['province'] = $('#edit_province option:selected').text()
+			data['municipality'] = $('#edit_municipality option:selected').text()
+			data['barangay'] = $('#edit_barangay option:selected').text()
 		}
 
 		$.ajax({
@@ -466,11 +474,17 @@ populateEducationProfile = (user_id) => {
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 		success: (result) => {
+			console.log(result)
+			if (!result.data) return
 			const data = result.data
+
+			if (data.user_course !== null) $('#user_course').val(data.user_course)
+
+			if (data.admission_status !== null) $('#admission_status').val(data.admission_status)
+
+			if (data.scholastic_status !== null) $('#scholastic_status').val(data.scholastic_status)
+
 			$('#hidden_user_id').val(data.user_id)
-			$('#user_course').val(data.user_course)
-			$('#admission_status').val(data.admission_status)
-			$('#scholastic_status').val(data.scholastic_status)
 			$('#school_year_admitted').val(data.school_year_admitted)
 			$('#course_when_admitted').val(data.course_when_admitted)
 			$('#high_school_graduated').val(data.high_school_graduated)
@@ -498,6 +512,7 @@ updateEducationProfile = (form, user_id) => {
 		type: 'PUT',
 		dataType: 'json',
 		headers: AJAX_HEADERS,
+		data: data,
 		success: (result) => {
 			if (result) {
 				Toast.fire({
