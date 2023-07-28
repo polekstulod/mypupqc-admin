@@ -72,6 +72,11 @@ charts = () => {
 	ResearchchartFour()
 	ResearchchartFive()
 	ResearchchartSix()
+
+	ResearchdonutOne()
+	ResearchdonutTwo()
+	ResearchdonutThree()
+	ResearchdonutFour()
 }
 
 chartOne = () => {
@@ -808,12 +813,12 @@ finalChart = () => {
 }
 
 ResearchchartOne = () => {
-	var chartNumberOne = document.getElementById('ResearchchartOne')
+	var ResearchchartNumberOne = document.getElementById('ResearchchartOne')
 
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + 'researchcop/researchcharts',
+		url: apiURL + 'researchcop/admin/researchcharts',
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 	}).then((result) => {
@@ -822,17 +827,17 @@ ResearchchartOne = () => {
 		const researchCount = parseInt(data)
 		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
 
-		chartNumberOne.innerHTML = htmlContent
+		ResearchchartNumberOne.innerHTML = htmlContent
 	})
 }
 
 ResearchchartTwo = () => {
-	var chartNumberTwo = document.getElementById('ResearchchartTwo')
+	var ResearchchartNumberTwo = document.getElementById('ResearchchartTwo')
 
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + 'researchcop/researchcharts',
+		url: apiURL + 'researchcop/admin/researchcharts',
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 	}).then((result) => {
@@ -841,17 +846,17 @@ ResearchchartTwo = () => {
 		const researchCount = parseInt(data)
 		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
 
-		chartNumberTwo.innerHTML = htmlContent
+		ResearchchartNumberTwo.innerHTML = htmlContent
 	})
 }
 
 ResearchchartThree = () => {
-	var chartNumberThree = document.getElementById('ResearchchartThree')
+	var ResearchchartNumberThree = document.getElementById('ResearchchartThree')
 
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + 'researchcop/researchcharts',
+		url: apiURL + 'researchcop/admin/researchcharts',
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 	}).then((result) => {
@@ -860,17 +865,17 @@ ResearchchartThree = () => {
 		const researchCount = parseInt(data)
 		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
 
-		chartNumberThree.innerHTML = htmlContent
+		ResearchchartNumberThree.innerHTML = htmlContent
 	})
 }
 
 ResearchchartFour = () => {
-	var chartNumberFour = document.getElementById('ResearchchartFour')
+	var ResearchchartNumberFour = document.getElementById('ResearchchartFour')
 
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + 'researchcop/researchcharts',
+		url: apiURL + 'researchcop/admin/researchcharts',
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 	}).then((result) => {
@@ -879,17 +884,17 @@ ResearchchartFour = () => {
 		const researchCount = parseInt(data)
 		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
 
-		chartNumberFour.innerHTML = htmlContent
+		ResearchchartNumberFour.innerHTML = htmlContent
 	})
 }
 
 ResearchchartFive = () => {
-	var chartNumberFive = document.getElementById('ResearchchartFive')
+	var ResearchchartNumberFive = document.getElementById('ResearchchartFive')
 
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + 'researchcop/copyrightcharts',
+		url: apiURL + 'researchcop/admin/copyrightcharts',
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 	}).then((result) => {
@@ -898,17 +903,17 @@ ResearchchartFive = () => {
 		const researchCount = parseInt(data)
 		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
 
-		chartNumberFive.innerHTML = htmlContent
+		ResearchchartNumberFive.innerHTML = htmlContent
 	})
 }
 
 ResearchchartSix = () => {
-	var chartNumberSix = document.getElementById('ResearchchartSix')
+	var ResearchchartNumberSix = document.getElementById('ResearchchartSix')
 
 	$.ajax({
 		type: 'GET',
 		cache: false,
-		url: apiURL + 'researchcop/copyrightcharts',
+		url: apiURL + 'researchcop/admin/copyrightcharts',
 		dataType: 'json',
 		headers: AJAX_HEADERS,
 	}).then((result) => {
@@ -917,6 +922,294 @@ ResearchchartSix = () => {
 		const researchCount = parseInt(data)
 		const htmlContent = `<h2 class="mt-4 ff-secondary fw-semibold"><span class="counter-value">${researchCount}</span></h2>`
 
-		chartNumberSix.innerHTML = htmlContent
+		ResearchchartNumberSix.innerHTML = htmlContent
+	})
+}
+
+ResearchdonutOne = () => {
+	var ResearchdonutOne = echarts.init(document.getElementById('ResearchdonutChartOne'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/admin/programcharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.program_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Research Programs',
+				subtext: 'All Programs',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) donutOne_${new Date().toISOString().slice(0, 10)}research_program_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c} ({d}%)',
+			},
+			series: [
+				{
+					type: 'pie',
+					radius: ['50%', '70%'],
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.sort((a, b) => b.value - a.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		ResearchdonutOne.setOption(option)
+	})
+}
+
+ResearchdonutTwo = () => {
+	var ResearchdonutTwo = echarts.init(document.getElementById('ResearchdonutChartTwo'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/admin/researchcapstonecharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.category_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Research Category',
+				subtext: 'Research and Capstone',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) donutTwo_${new Date().toISOString().slice(0, 10)}research_category_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c} ({d}%)',
+			},
+			series: [
+				{
+					type: 'pie',
+					radius: ['50%', '70%'],
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.sort((a, b) => b.value - a.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		ResearchdonutTwo.setOption(option)
+	})
+}
+
+ResearchdonutThree = () => {
+	var ResearchdonutThree = echarts.init(document.getElementById('ResearchdonutChartThree'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/admin/researchstatuscharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.researchstatus_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Research Statuses',
+				subtext: 'All Researches',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) donutThree_${new Date().toISOString().slice(0, 10)}research_status_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c} ({d}%)',
+			},
+			series: [
+				{
+					type: 'pie',
+					radius: ['50%', '70%'],
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.sort((a, b) => b.value - a.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		ResearchdonutThree.setOption(option)
+	})
+}
+
+ResearchdonutFour = () => {
+	var ResearchdonutFour = echarts.init(document.getElementById('ResearchdonutChartFour'))
+
+	$.ajax({
+		type: 'GET',
+		cache: false,
+		url: apiURL + 'researchcop/admin/copyrightstatuscharts',
+		dataType: 'json',
+		headers: AJAX_HEADERS,
+	}).then((result) => {
+		const data = result.data.copyrightstatus_count
+
+		// Convert data object to array of objects
+		const chartData = Object.entries(data).map(([name, value], index) => {
+			return {
+				value: value,
+				name: name,
+			}
+		})
+
+		// Create options object for chart
+		const option = {
+			title: {
+				text: 'Copyright Statuses',
+				subtext: 'All Researches',
+				left: 'center',
+			},
+			toolbox: {
+				show: true,
+				feature: {
+					saveAsImage: {
+						show: true,
+						title: 'Save as Image',
+						name: `(myPUPQC) donutFour_${new Date().toISOString().slice(0, 10)}copyright_status_count`,
+					},
+				},
+			},
+			legend: {
+				orient: 'vertical',
+				left: 'left',
+				scroll: true,
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '<b>{b}</b>: {c} ({d}%)',
+			},
+			series: [
+				{
+					type: 'pie',
+					radius: ['50%', '70%'],
+					itemStyle: {
+						borderRadius: 10,
+						borderColor: '#fff',
+						borderWidth: 2,
+					},
+					emphasis: {
+						label: {
+							show: true,
+							fontSize: 16,
+							fontWeight: 'bold',
+						},
+					},
+					data: chartData.sort((a, b) => b.value - a.value),
+				},
+			],
+		}
+
+		// Set options to chart
+		ResearchdonutFour.setOption(option)
 	})
 }
